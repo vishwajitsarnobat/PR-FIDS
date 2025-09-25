@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 import pandas as pd
+from collections import OrderedDict
 import time
 from data_loader import load_and_preprocess_nsl_kdd
 from ids_model import CNN_LSTM_IDS
@@ -18,7 +19,13 @@ SCENARIOS = {
 
 # --- SELECT SCENARIOS TO RUN ---
 # You can run one or more scenarios at a time. The results will be saved together.
-scenarios_to_run = ["baseline", "attack_label_flipping", "defended_label_flipping"]
+scenarios_to_run = [
+    "baseline",
+    "attack_label_flipping",
+    "attack_backdoor",
+    "defended_label_flipping",
+    "defended_backdoor"
+]
 
 # --- SIMULATION PARAMETERS ---
 NUM_CLIENTS = 10
