@@ -90,8 +90,8 @@ The project consists of a server, multiple clients, and a set of modules for han
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/vishwajitsarnobat/PR-FIDS.git
+   cd PR-FIDS
    ```
 
 2. **Create and activate a virtual environment:**
@@ -104,21 +104,24 @@ The project consists of a server, multiple clients, and a set of modules for han
    python -m venv .venv
    source .venv/bin/activate
    ```
+   *(Note: Follow the official documentation to install **uv** if not installed already:  
+    [uv Installation Guide](https://docs.astral.sh/uv/getting-started/installation/))*
 
 3. **Install the required packages:**
    ```bash
    # Using uv
-   uv pip install -r requirements.txt
+   uv sync
    
    # Or using pip
    pip install -r requirements.txt
-   ```   *(Note: You may need to create a `requirements.txt` file by running `uv pip freeze > requirements.txt` or `pip freeze > requirements.txt`)*
+   ```   
+   *(Note: You may need to create a `requirements.txt` file by running `uv pip freeze > requirements.txt` or `pip freeze > requirements.txt`)*
 
 ### Dataset
 
 This project uses the **NSL-KDD Dataset**. You must download it manually.
-1. Visit the [NSL-KDD Dataset Page](https://www.unb.ca/cic/datasets/nsl-kdd.html).
-2. Download `KDDTrain+.txt` and `KDDTest+.txt`.
+1. Visit the [NSL-KDD Dataset Page on Kaggle](https://www.kaggle.com/datasets/hassan06/nslkdd).
+2. Download entire zip and extract to get `KDDTrain+.txt` and `KDDTest+.txt`.
 3. Place both files in the root directory of this project.
 
 ---
@@ -138,14 +141,23 @@ All simulations are controlled from `main.py`.
 2. **Run the Simulation:**
    Execute the main script from your terminal:
    ```bash
-   python main.py
+   # Using uv
+   uv run main.py
+
+   # Or using python
+   python3 main.py
    ```
+   *(Note: Use python instead of python3 on Windows system)*
    This will run the selected scenarios and save the results to `simulation_results.csv`.
 
 3. **Generate Plots:**
    After the simulation is complete, run the analysis script to generate the plots:
    ```bash
-   python results_analysis.py
+   # Using uv
+   uv run main.py
+
+   # Or using python
+   python3 results_analysis.py
    ```
    This will read `simulation_results.csv` and save the plots as PNG files in the root directory.
 
@@ -167,3 +179,8 @@ All simulations are controlled from `main.py`.
 ├── KDDTest+.txt            # (Must be downloaded)
 └── README.md               # This file
 ```
+---
+
+## 10. Documentation
+
+[Google Docs Link](https://docs.google.com/document/d/1iCbQGVKUGMK30eZ7k4ftov1jacxLfs7PTE505NhOsCA/edit?usp=sharing)
