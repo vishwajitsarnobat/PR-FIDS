@@ -1,0 +1,12 @@
+[project]
+name = "pr-fids"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.3",
+    "pandas>=2.3.2",
+    "scikit-learn>=1.7.2",
+    "torch>=2.8.0",
+]
