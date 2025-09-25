@@ -104,8 +104,7 @@ The project consists of a server, multiple clients, and a set of modules for han
    python -m venv .venv
    source .venv/bin/activate
    ```
-   *(Note: Follow the official documentation to install **uv** if not installed already:  
-    [uv Installation Guide](https://docs.astral.sh/uv/getting-started/installation/))*
+   *(Note: Follow the official documentation to install **uv** if not installed already: [uv Installation Guide](https://docs.astral.sh/uv/getting-started/installation/))*
 
 3. **Install the required packages:**
    ```bash
@@ -147,8 +146,8 @@ All simulations are controlled from `main.py`.
    # Or using python
    python3 main.py
    ```
-   *(Note: Use python instead of python3 on Windows system)*
    This will run the selected scenarios and save the results to `simulation_results.csv`.
+    *(Note: Use python instead of python3 on Windows system)*
 
 3. **Generate Plots:**
    After the simulation is complete, run the analysis script to generate the plots:
