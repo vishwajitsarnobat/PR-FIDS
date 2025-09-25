@@ -2,7 +2,8 @@ import torch
 import torch.optim as optim
 from torch.nn import CrossEntropyLoss
 from collections import OrderedDict
-from attacks import label_flipping_attack # Import the attack function
+# Import the specific attack functions
+from attacks import label_flipping_attack, backdoor_injection_attack
 
 class FLClient:
     """
@@ -31,13 +32,11 @@ class FLClient:
         """
         training_loader = self.data_loader
 
-        # If the client is malicious, poison the data before training
-        if self.is_malicious and self.attack_type == 'label_flipping':
-            # print(f"Client {self.client_id} is malicious and performing a label flipping attack.")
-            training_loader = label_flipping_attack(
-                self.data_loader, 
-                intensity=self.attack_intensity
-            )
+        if self.is_malicious:
+            if self.attack_type == 'label_flipping':
+                training_loader = label_flipping_attack(self.data_loader, intensity=self.attack_intensity)
+            elif self.attack_type == 'backdoor':
+                training_loader = backdoor_injection_attack(self.data_loader, intensity=self.attack_intensity)
 
         self.model.to(self.device)
         self.model.train()
