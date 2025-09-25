@@ -20,8 +20,6 @@ This repository provides a complete implementation of a **Poisoning-Resistant Fe
 8. [How to Run Simulations](#8-how-to-run-simulations)
 9. [Project Structure](#9-project-structure)
 10. [Detailed Documentation](#10-detailed-documentation)
-11. [License](#11-license)
-12. [Contact](#12-contact)
 
 ---
 
